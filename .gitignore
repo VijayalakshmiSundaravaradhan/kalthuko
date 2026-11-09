@@ -1,0 +1,1 @@
+node_modules/\ndist/\nbuild/\n*.log\n*.tmp\n.vscode/\n*.tgz\n*.tar.gz
