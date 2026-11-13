@@ -7,9 +7,8 @@ This project currently focuses on Phase 0: UI scaffold and integration with a la
 - Node.js >= 20
 - npm >= 10
 - Rust toolchain (for Tauri): rustc, cargo, and the standard build tools
-- Taura CLI dependencies handled by npm install
 
-## Quick Start
+## Quick Start (Windows PC)
 1. Install dependencies
    - npm install
 2. Run for development (UI + Electron-like packaging via Tauri)
@@ -30,3 +29,24 @@ This project currently focuses on Phase 0: UI scaffold and integration with a la
 
 ## License
 This project is under the MIT License.
+
+
+   ## DB Schema Bootstrapping
+
+   Phase 0 introduces a local SQLite database schema bootstrapped via SQL script(s).
+
+   - SQL schema file: data/phase0_schema.sql
+   - Bootstrap script (PowerShell, Windows): setup_phase0_db.ps1 (runs the inline bootstrap)
+   - Alternative bootstrap (from SQL): scripts/setup_phase0_db_from_sql.ps1 (loads phase0_schema.sql into kalthuko_phase0.db)
+
+   Prerequisites:
+   - sqlite3 installed and accessible in PATH
+
+   Run steps on Windows:
+   1) Bootstrap using inline script (already provided in repo)
+      - powershell -ExecutionPolicy Bypass -File "e:\\Projects\\Kalthuko\\setup_phase0_db.ps1"
+   2) Bootstrap from SQL file
+      - powershell -ExecutionPolicy Bypass -File "e:\\Projects\\Kalthuko\\scripts\\setup_phase0_db_from_sql.ps1"
+
+   DB file location: e:\\Projects\\Kalthuko\\data\\kalthuko_phase0.db
+
